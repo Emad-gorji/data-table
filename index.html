@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>جدول داده‌ها</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>جدول داده‌ها</h1>
+      </header>
+
+      <section class="controls">
+        <div class="control-group">
+          <label for="searchInput">جستجو</label>
+          <input id="searchInput" type="search" placeholder="جستجو در نام، ایمیل، نقش و وضعیت..." />
+        </div>
+        <div class="control-group">
+          <label for="statusFilter">وضعیت</label>
+          <select id="statusFilter">
+            <option value="">همه</option>
+            <option value="فعال">فعال</option>
+            <option value="غیرفعال">غیرفعال</option>
+            <option value="در انتظار">در انتظار</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="pageSize">تعداد در صفحه</label>
+          <select id="pageSize">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <button id="resetFilters" class="btn-secondary">پاکسازی فیلترها</button>
+        </div>
+      </section>
+
+      <section class="table-card">
+        <div class="table-wrapper">
+          <table id="dataTable">
+            <thead>
+              <tr>
+                <th data-key="id" class="sortable">شناسه</th>
+                <th data-key="name" class="sortable">نام</th>
+                <th data-key="email" class="sortable">ایمیل</th>
+                <th data-key="role" class="sortable">نقش</th>
+                <th data-key="status" class="sortable">وضعیت</th>
+                <th data-key="createdAt" class="sortable">تاریخ ثبت‌نام</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+        <div id="emptyState" class="empty-state" hidden>
+          موردی یافت نشد
+        </div>
+        <footer class="table-footer">
+          <div id="rangeInfo" class="range-info"></div>
+          <nav id="pagination" class="pagination"></nav>
+        </footer>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
+
+
